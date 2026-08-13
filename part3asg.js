@@ -165,3 +165,173 @@ try {
 // Validate account number
 
 console.log("Account Number Valid:",BankAccount.validateAccountNumber(account.accountNumber));
+
+
+// SECOND PROBELM 
+/* 
+🏨 Problem: Hotel Room Management System
+
+Build a Hotel Room Management System using JavaScript classes.
+
+Your program should manage a hotel room and allow a customer to book, cancel, and check the room.
+
+Requirements
+
+Create a HotelRoom class with:
+
+roomNumber
+customerName
+private #price
+isBooked
+Methods
+
+Create:
+
+bookRoom(customerName)
+
+If the room is already booked:
+
+Room is already booked
+
+Otherwise:
+
+Room booked successfully
+
+Create:
+
+cancelBooking()
+
+If the room isn't booked:
+
+Room is not booked
+
+Otherwise cancel the booking.
+
+Create a getter:
+
+price
+
+It should return the room price.
+
+Create a setter:
+
+roomPrice
+
+It should allow changing the price, but don't allow a price less than 500.
+
+Create a static method:
+
+validateRoomNumber(roomNumber)
+
+A room number is valid if it is between 101 and 999.
+
+🏨 Create Another Class
+
+Create:
+
+class LuxuryRoom extends HotelRoom
+
+It should inherit everything from HotelRoom.
+
+Add:
+
+extraCharge
+
+and a method:
+
+getTotalPrice()
+
+which returns:
+
+room price + extra charge
+*/ 
+class HotelRoom {
+    // Private price
+    #price = 0;
+    constructor(roomNumber, customerName, isBooked, price) {
+        this.roomNumber = roomNumber;
+        this.customerName = customerName;
+        this.isBooked = isBooked;
+        this.#price = price;
+    }
+    // Book room
+    bookRoom(customerName) {
+        if (this.isBooked) {
+            console.log("Room is already booked");
+        } else {
+            this.isBooked = true;
+            this.customerName = customerName;
+            console.log("Room booked successfully");
+            console.log("Name:", this.customerName);
+            console.log("Room Number:", this.roomNumber);
+        }
+    }
+    // Cancel booking
+    cancelBooking() {
+        if (this.isBooked) {
+            console.log(
+                "Amount " + this.#price + " Is Refunded In Your Account"
+            );
+            this.isBooked = false;
+            this.customerName = "";
+            console.log("Your booking is cancelled");
+        } else {
+            console.log("Room is not booked");
+        }
+    }
+    // Get price
+    get price() {
+        return this.#price;
+    }
+    // Change price
+    set price(newPrice) {
+        if (newPrice < 500) {
+            throw new Error("Price should be greater than 500");
+        }
+        this.#price = newPrice;
+    }
+    // Validate room number
+    static validateRoomNumber(roomNumber) {
+        if (roomNumber >= 101 && roomNumber <= 999) {
+            return true;
+        }
+        return false;
+    }
+}
+// Luxury Room
+class LuxuryRoom extends HotelRoom {
+    constructor(roomNumber,customerName,isBooked,price,extraCharge) {
+        super(roomNumber,customerName,isBooked,price);
+        this.extraCharge = extraCharge;
+    }
+    // Calculate total price
+    getTotalPrice() {
+        return this.price + this.extraCharge;
+    }
+}
+// Create room
+const room = new LuxuryRoom(205,"",false,3000,1000);
+// Room information
+console.log("Room Number:", room.roomNumber);
+console.log("Price:", room.price);
+console.log("Extra Charge:", room.extraCharge);
+// Book room
+room.bookRoom("Param");
+// Try booking again
+room.bookRoom("Rahul");
+// Cancel booking
+room.cancelBooking();
+// Try cancelling again
+room.cancelBooking();
+// Change price
+try {
+    room.price = 3500;
+    console.log("New Price:",room.price
+    );
+} catch (error) {
+    console.log(error.message);
+}
+// Total luxury room price
+console.log("Total Luxury Price:",room.getTotalPrice());
+// Validate room number
+console.log("Room Number Valid:",HotelRoom.validateRoomNumber(room.roomNumber));
