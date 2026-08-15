@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#weather {
+    margin-top: 30px;
+}
+
+#error {
+    margin-top: 20px;
+}
