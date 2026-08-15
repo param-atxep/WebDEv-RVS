@@ -8,13 +8,47 @@
 </head>
 <body>
 
-    <h1>Weather Dashboard</h1>
+    <main class="app">
 
-    <input type="text" id="cityInput" placeholder="Enter city">
-    <button id="searchBtn">Search</button>
+        <section class="weather-card">
 
-    <div id="weather"></div>
-    <div id="error"></div>
+            <div class="header">
+                <div>
+                    <span class="eyebrow">WEATHER DASHBOARD</span>
+                    <h1>Check the weather.</h1>
+                    <p>Real-time weather information for any city.</p>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search city..."
+                    autocomplete="off"
+                >
+
+                <button id="searchBtn">
+                    <span>Search</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <div id="error"></div>
+
+            <div id="weather"></div>
+
+            <div class="footer">
+                <span>Powered by Open-Meteo</span>
+                <span class="status">
+                    <span class="dot"></span>
+                    Live Data
+                </span>
+            </div>
+
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
