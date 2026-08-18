@@ -2,6 +2,8 @@
 PROBLEM 2 — Weather Dashboard
 Difficulty: ⭐⭐⭐
 
+
+
 Build a small Weather Dashboard using an API.
 
 Use the browser's:
