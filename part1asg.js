@@ -38,6 +38,10 @@ const percentage = (totalMarks / 500) * 100;
 // Student information
 console.log("================================");
 console.log("       STUDENT RESULT");
+
+
+
+
 console.log("================================");
 
 console.log("Name       :", studentName);
