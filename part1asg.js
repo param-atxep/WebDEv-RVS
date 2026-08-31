@@ -21,34 +21,24 @@ const studentName = "Rahul";
 const age = 20;
 const city = "Pune";
 const isStudent = true;
-
 // Marks
 const math = 82;
 const physics = 74;
 const programming = 91;
 const database = 68;
 const english = 77;
-
 // Calculate total and percentage
 const totalMarks =
     math + physics + programming + database + english;
-
 const percentage = (totalMarks / 500) * 100;
-
 // Student information
 console.log("================================");
 console.log("       STUDENT RESULT");
-
-
-
-
 console.log("================================");
-
 console.log("Name       :", studentName);
 console.log("Age        :", age);
 console.log("City       :", city);
 console.log("Student    :", isStudent);
-
 // Total and percentage
 console.log("Total Marks:", totalMarks);
 console.log("Percentage :", percentage + "%");
