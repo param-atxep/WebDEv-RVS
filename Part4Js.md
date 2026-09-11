@@ -30,6 +30,14 @@ Real-world examples:
 
 Synchronous means:
 
+
+
+
+
+
+
+
+
 > JavaScript executes one task at a time, in order.
 
 Example:
@@ -97,6 +105,8 @@ console.log("Continue working");
 ```
 
 Output:
+
+
 
 ```
 ```
@@ -167,6 +177,8 @@ setTimeout(() => {
 2000 milliseconds
 = 2 seconds
 ```
+
+
 
 Real use:
 
